@@ -1,0 +1,9 @@
+@mixin backdropFilter($type:blur(2px)){
+    -webkit-backdrop-filter: $type;
+    backdrop-filter: $type;
+}
+@mixin boxshadow($h: 0.4rem, $v: 0.4rem, $b:0.3rem, $brand-color: rgba(0,0,0,0.3)){
+    -webkit-box-shadow : $h $v $b $brand-color;
+    -moz-box-shadow : $h $v $b $brand-color;
+    box-shadow : $h $v $b $brand-color;
+}

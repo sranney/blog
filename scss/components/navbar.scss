@@ -1,0 +1,31 @@
+.navigation {
+    @include backdropFilter(blur(2px));
+    width:98%;
+    height:120px;
+    background-image:linear-gradient(to right bottom, $blue_level_1,$red_level_1);
+    position: fixed;
+
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    &__button{
+        cursor: pointer;
+        color:$white_level_1;
+        font-size:1.6rem;
+        background-color:$green_level_1;
+        outline:none;
+        border: none;
+        width: 15%;
+        height: 80%;
+        transition:transform 0.3s,box-shadow 0.3s;
+        &:hover{
+            @include boxshadow(0.4rem, 0.4rem, 0.3rem, $shadow_color_level_1);
+            transform: $hover_lift_1;
+        }
+        &:active{
+            @include boxshadow(0.2rem, 0.2rem, 0.2rem, $shadow_color_level_1);
+            transform: $active_press_1;           
+        }
+    }
+}
+

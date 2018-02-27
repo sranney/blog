@@ -1,0 +1,9 @@
+@import "./abstracts/variables.scss";
+@import "./abstracts/mixins.scss";
+@import "./components/navbar.scss";
+
+body{
+    position:relative;
+    margin:15px;
+}
+

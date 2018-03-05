@@ -1,9 +1,17 @@
 @import "./abstracts/variables.scss";
 @import "./abstracts/mixins.scss";
-@import "./components/navbar.scss";
+@import "./components/top_bottom.scss";
+@import "./components/buttons.scss";
+@import "./components/typography.scss";
 
 body{
+    @include background_image_linearGradient(to bottom,$white_level_1,0%,80%,$bluegrey_level_1,100%);   
+}
+
+#root{
     position:relative;
-    margin:15px;
+    margin:0 15px;
+    padding:140px 0 20px 0;
+    @include background_image_linearGradient(to bottom,$white_level_1,0%,80%,$bluegrey_level_1,100%);
 }
 

@@ -1,0 +1,17 @@
+.navigation {
+    @include backdropFilter(blur(5px));
+    width:98%;
+    height:120px;
+    @include background_image_linearGradient(to bottom,$blue_level_1,25%,25%,$green_level_1,100%);
+    position: fixed;
+    margin-top:-140px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    z-index:100;
+}
+
+.footer {
+    display:flex;
+    justify-content:space-around;
+}

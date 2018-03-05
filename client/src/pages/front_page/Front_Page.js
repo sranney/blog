@@ -1,7 +1,8 @@
 import React, {Component} from "react";
+import NavBar from "./components/navbar";
 import Title from "./components/title";
 import About from "./components/about";
-import NavBar from "./components/navbar";
+import Footer from "./components/footer";
 
 export default class FrontPage extends Component{
     render=()=>{
@@ -10,6 +11,7 @@ export default class FrontPage extends Component{
                 <NavBar/>
                 <Title/>
                 <About/>
+                <Footer/>
             </div>
         );
     }

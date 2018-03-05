@@ -2,8 +2,28 @@
     -webkit-backdrop-filter: $type;
     backdrop-filter: $type;
 }
-@mixin boxshadow($h: 0.4rem, $v: 0.4rem, $b:0.3rem, $brand-color: rgba(0,0,0,0.3)){
-    -webkit-box-shadow : $h $v $b $brand-color;
-    -moz-box-shadow : $h $v $b $brand-color;
-    box-shadow : $h $v $b $brand-color;
+
+@mixin boxshadow($h: 0.4rem, $v: 0.4rem, $b:0.3rem, $shadow-color: $shadow_color_level_1){
+    -webkit-box-shadow : $h $v $b $shadow-color;
+    -moz-box-shadow : $h $v $b $shadow-color;
+    box-shadow : $h $v $b $shadow-color;
+}
+
+@mixin boxshadow_buttons($h: -0.2rem, $v: -0.2rem, $b:0.5rem, $s:0rem, $shadow-color: $shadow_color_level_1){
+    -webkit-box-shadow : inset $h $v $b $s $shadow-color;
+    -moz-box-shadow : inset $h $v $b $s $shadow-color;
+    box-shadow : inset $h $v $b $s $shadow-color;
+}
+
+@mixin boxshadow_double($h_1: -0.2rem, $v_1: -0.2rem, $b_1:0.5rem, $s_1:0rem, $shadow-color_1: $shadow_color_level_1,$h_2: 0.4rem, $v_2: 0.4rem, $b_2:0.3rem, $s_2:1,$shadow-color_2: $shadow_color_level_1){
+    -webkit-box-shadow : inset $h_1 $v_1 $b_1 $s_1 $shadow-color_1,
+                            $h_2 $v_2 $b_2 $shadow-color_2;
+    -moz-box-shadow : inset $h_1 $v_1 $b_1 $s_1 $shadow-color_1,
+                        $h_2 $v_2 $b_2 $shadow-color_2;
+    box-shadow : inset $h_1 $v_1 $b_1 $s_1 $shadow-color_1,
+                    $h_2 $v_2 $b_2 $shadow-color_2;
+}
+
+@mixin background_image_linearGradient($dir:to bottom,$beg_col:$blue_level_1,$beg_perc:0%,$break_perc:0%,$end_col:$green_level_1,$end_perc:100%){
+    background-image:linear-gradient($beg_col $beg_perc $break_perc, $end_col $end_perc);    
 }

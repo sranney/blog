@@ -1,10 +1,18 @@
 $blue_level_1:rgba(60,110,170,0.5);
 $red_level_1:rgba(170,110,170,0.5);
 $green_level_1:rgb(30,200,160);
+$grey_level_1: rgb(190,190,190);
 $white_level_1:#eee;
+$bluegrey_level_1:#37474f;
+$bluegrey_level_2: #263238;
 
 $shadow_color_level_1: rgba(0,0,0,0.3);
 
+$text_shadow_embossed: -1px -1px 2px #fff, 1px 1px 2px #000;
 
-$hover_lift_1:translateY(-5px);
-$active_press_1:translateY(-3px);
+
+$hover_lift_1: rotateX(0deg) translateY(-5px);
+$active_press_1: rotateX(0deg) translateY(-3px);
+
+$fontFamily_1:"Vollkorn",serif;
+$fontFamily_2:"Ubuntu Mono",monospace;

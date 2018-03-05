@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function sortAndSplit(array){
+            array = array.sort((a,b)=>a-b);
+            remainder = array.length%3;
+            higher_amount = Math.ceil(array.length/3);
+            lower_amount = Math.floor(array.length/3);
+            array_count = 0;
+            array_of_arrays = [];
+            for (var slot = 0; slot < Math.min(array.length,3);slot++){
+                var increment = lower_amount;
+                if(slot<remainder){
+                    increment = higher_amount;
+                }
+                array_of_arrays.push(array.slice(array_count, array_count + increment));
+                array_count += increment;
+            }
+            console.log(array_of_arrays);
+        }
+
+        
+      function find_frequency (letter,phrase){
+        console.log(phrase.length-phrase.replace(new RegExp(letter,"gi"),"").length);
+        }
+
+        function is_power_two(num){
+            const dividedBy2=num/2;
+        
+            if(dividedBy2<2){
+                if(dividedBy2===1){
+                    console.log("true")
+                } else {
+                    console.log("false")
+                }
+            } else {
+                is_power_two(dividedBy2);
+            }
+
+        }
+
+        function kDiff (k,array){
+
+            var results=[];
+            for (var i=0; i<array.length; i++){
+                const center = array[i];
+                if(array.indexOf(center-k)>-1){
+                    results.push([Math.min(center,center-k),Math.max(center,center-k)])
+                } else if (array.indexOf(array[i]+k)>-1){
+                    results.push([Math.min(center,center+k),Math.max(center,center+k)])
+                }
+            }
+            console.log(results);
+        }
+
+        kDiff(3,[1,2,3,4]);
+        kDiff(1,[1,2,3,4]);
+
+        //variables a,b,c and d range from 1 to 1000
+        //find where a^3 + b^3 = c^3 + d^3
+
+        function cubedSums(){
+            // for (var a = 1; a<=1000; a++){
+            //     for (var b = 1; b<=1000; b++){
+            //         const sum = Math.pow(a,3)+Math.pow(b,3);
+            //         for (var c=1; c<=1000; c++){
+            //             const d = Math.pow(sum-Math.pow(c,3),1/3);
+            //             if(d>0&&d%1===0){
+            //                 console.log(`a: ${a};b: ${b};c: ${c};d: ${d}`)
+            //             }
+            //         }
+
+            //     }
+            // }
+            
+            var cubedSums = {};
+
+            for (var a = 1; a<=1000; a++){
+                for (var b = 1; b<=1000; b++){
+                    const sum = (Math.pow(a,3) + Math.pow(b,3)).toString();
+                    if(Object.keys(cubedSums).indexOf(sum)===-1){
+                        cubedSums[sum] = [{num1:a,num2:b}];
+                    } else {
+                        cubedSums[sum].push({num1:a,num2:b})
+                    }
+                }
+            }
+
+            let totalPairs = 0;
+            //count the number of combinations
+            Object.keys(cubedSums).forEach(combos=>totalPairs+=((combos.length+1)*(combos.length))/2)
+
+            console.log(totalPairs);
+
+        }
+
+        cubedSums();
+
+    </script>
+</body>
+</html>

@@ -53,10 +53,17 @@
     width:max-content;
     text-align: center;
     font-size:2rem;
-    clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
     @include background_image_linearGradient(to right bottom,rgba($red_level_1,0.5),0%,0%,rgba($red_level_1,1),100%);
     color:$white_level_1;
     transition: background-image 0.5s,transform 0.5s;
+
+    &:nth-child(2n+1){
+        clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);        
+    }
+    &:nth-child(2n){
+        clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 5% 100%);        
+    }
+
     &:hover{
         @include background_image_linearGradient(to right bottom,rgba($red_level_1,1),0%,0%,rgba($red_level_1,0.5),100%);
         transform: scale(1.05);

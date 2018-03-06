@@ -15,6 +15,62 @@
   display: flex;
   justify-content: space-around; }
 
+.overlay {
+  position: fixed;
+  height: 100vh;
+  top: 0%;
+  left: 0%;
+  z-index: 1000;
+  width: 100vw;
+  max-width: 0vw;
+  background-image: linear-gradient(to right bottom, #3c6eaa 0%, #3c6eaa 90%, #1ec8a0 100%);
+  transition: max-width 0.3s;
+  overflow: hidden; }
+
+.overlay.shown {
+  max-width: 100vw; }
+
+.overlay .content {
+  text-align: center;
+  color: #eee;
+  font-family: "Vollkorn", serif;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 2s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem; }
+
+.overlay .content.shown {
+  opacity: 1; }
+
+.overlay .content .section_category {
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, transparent 0%, transparent 50%, #1ec8a0 50%, #1ec8a0 100%);
+  background-size: 200% 100%;
+  background-position: -0.1%;
+  transition: background-position 0.3s,letter-spacing 0.1s; }
+
+.overlay .content .section_category:hover {
+  background-position: 100%;
+  letter-spacing: 1.1rem; }
+
+.closeBtn {
+  cursor: pointer;
+  opacity: 0;
+  color: #bd2c00;
+  font-size: 0.2rem;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  transition-delay: 0.4s;
+  transition: opacity 0.4s,font-size 0.1s; }
+
+.closeBtn.shown {
+  opacity: 1;
+  font-size: 2rem; }
+
 .navigation__button {
   cursor: pointer;
   font-family: "Ubuntu Mono", monospace;
@@ -94,10 +150,13 @@
   width: max-content;
   text-align: center;
   font-size: 2rem;
-  clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 5% 100%);
   background-image: linear-gradient(rgba(170, 110, 170, 0.5) 0% 0%, #aa6eaa 100%);
   color: #eee;
   transition: background-image 0.5s,transform 0.5s; }
+  .about_p:nth-child(2n+1) {
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); }
+  .about_p:nth-child(2n) {
+    clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 5% 100%); }
   .about_p:hover {
     background-image: linear-gradient(#aa6eaa 0% 0%, rgba(170, 110, 170, 0.5) 100%);
     transform: scale(1.05); }

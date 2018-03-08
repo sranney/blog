@@ -6,13 +6,22 @@
 @import "./components/typography.scss";
 
 body{
-    @include background_image_linearGradient(to bottom,$white_level_1,0%,80%,$bluegrey_level_1,100%);   
+    // background-image:radial-gradient(circle at top, $bluegrey_level_1, transparent),
+    // radial-gradient(circle at center, $white_level_1, transparent),
+    // radial-gradient(circle at bottom, $white_level_1, transparent);
+    background-image:radial-gradient(circle at right top, $pastel_red, transparent),
+    radial-gradient(circle at left bottom, $pastel_orange, transparent);
+    // ,linear-gradient(to bottom,transparent 0% 80%,rgba(black,1) 90%,rgba(black,1) 100%);
+    // @include background_image_linearGradient(to bottom,$white_level_1,0%,80%,$bluegrey_level_1,100%);   
+    background-position: center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    min-height:100vh;
 }
 
 #root{
     position:relative;
-    margin:0 15px;
+    margin:0 1rem;
     padding:140px 0 20px 0;
-    @include background_image_linearGradient(to bottom,$white_level_1,0%,80%,$bluegrey_level_1,100%);
 }
 

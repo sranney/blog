@@ -6,7 +6,7 @@
     z-index:1000;
     width:100vw;
     max-width:0vw;
-    background-image:linear-gradient(to right bottom,rgb(60,110,170) 0%,rgb(60,110,170) 90%,$green_level_1 100%);
+    background-image:linear-gradient(to right bottom,$blue_level_1 0%,$blue_level_1 90%,$green_level_1 100%);
     transition:max-width 0.3s;
     overflow:hidden;
 }
@@ -17,7 +17,7 @@
 
 .overlay .content{
     text-align:center;
-    color:$white_level_1;
+    
     font-family:$fontFamily_1;
     opacity:0;
     position:absolute;
@@ -34,8 +34,11 @@
 }
 
 .overlay .content .section_category{
+    cursor:pointer;
     padding:1rem 2rem;
-    
+    color:$white_level_1;
+    text-decoration:none;
+    display:block;
     background: linear-gradient(to right, transparent 0%,transparent 50%,$green_level_1 50%,$green_level_1 100%);    
 	background-size: 200% 100%;		
     background-position:-0.1%;
@@ -51,7 +54,7 @@
 .closeBtn{
     cursor:pointer;
     opacity:0;
-    color:#bd2c00;
+    color:$red_level_2;
     font-size:0.2rem;
     position:fixed;
     top:5%;

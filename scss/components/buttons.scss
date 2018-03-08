@@ -1,28 +1,71 @@
 .navigation__button{
     cursor: pointer;
     font-family:$fontFamily_2;
-    color:$blue_level_1;
-    font-size:2rem;
-    background-color:$grey_level_1;
+    color:rgba($blue_level_1,0.5);
+    font-size:2.3rem;
+    letter-spacing:0.1rem;
+    background-color:rgba($white_level_1,0.3);
     outline:none;
     border: none;
     width: 15%;
     height: 80%;
-    border-radius:8px;
     text-shadow: $text_shadow_embossed;
-    transition:transform 0.3s,box-shadow 0.3s,color 0.3s;
-    @include boxshadow_buttons(-0.2rem, -0.2rem, 0.5rem, 0.2rem, $shadow_color_level_1);
+    transition:transform 0.3s,box-shadow 0.3s,background-color 0.3s,letter-spacing 0.1s;
+    @include boxshadow($h: 0.4rem, $v: 0.4rem, $b:0.3rem, $shadow-color: $shadow_color_level_1);
+
     &:hover{
-        //first inset, second outside
-        @include boxshadow_double(-0.1rem, -0.1rem, 0.3rem, 0.1rem, $shadow_color_level_1,0.4rem, 0.4rem, 0.3rem, $shadow_color_level_1);
+        @include boxshadow($h: 0.5rem, $v: 0.7rem, $b:0.4rem, $shadow-color: $shadow_color_level_1);
+        background-color:rgba($white_level_1,0.2);
+        letter-spacing:0.2rem;
         transform: $hover_lift_1;
     }
     &:active{
-        @include boxshadow_double(-0.3rem, -0.3rem, 0.6rem, .15rem, $shadow_color_level_1,0.2rem, 0.2rem, 0.2rem, $shadow_color_level_1);
         transform: $active_press_1;
         
     }
     &:active,&:focus{
         outline:none;         
     }
+}
+
+.menuItem{
+    cursor:pointer;
+    margin:2rem 1rem;
+    padding:1rem;
+
+    clip-path:polygon(10% 0%,100% 0%,90% 100%,0% 100%);
+    // background-image:radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+    background-image:linear-gradient(to right,rgba($blue_level_1,1) 0%,rgba($blue_level_1,1) 1%,rgba($bluegrey_level_1,1) 20%,rgba($bluegrey_level_1,1) 50%,rgba($bluegrey_level_1,1) 80%,rgba($blue_level_1,1) 99%,rgba($blue_level_1,1));
+
+   
+
+    display:flex;
+    justify-content:center;
+    align-content:start;
+    min-height:0vh;
+    transition: clip-path 0.5s,background-image 0.5s,transform 0.3s,min-height 0.3s;
+
+    &_link{
+        margin-left:2rem;
+        height:max-content;
+        font-size:4rem;
+        text-shadow: $text_shadow_embossed;
+        color:rgba($blue_level_1,0.5);
+        & a{
+            color:rgba($blue_level_1,0.5);
+            font-family:$fontFamily_2;
+            &:hover,&:visited,&:link{
+                text-decoration:none;
+            }
+        }
+    }
+
+    &:hover{
+        
+        clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+        transform:translateY(-0.5rem);
+        background-image:linear-gradient(to right,rgba($blue_level_1,1) 0%,rgba($blue_level_1,1) 1%,rgba($bluegrey_level_1,1) 10%,rgba($bluegrey_level_1,1) 50%,rgba($bluegrey_level_1,1) 90%,rgba($blue_level_1,1) 99%,rgba($blue_level_1,1));
+
+    }
+
 }

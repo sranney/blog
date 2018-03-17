@@ -69,3 +69,23 @@
     }
 
 }
+
+.admin_home{
+    cursor:pointer;
+    position:fixed;
+    top:3%;
+    left:1%;
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    border:none;
+    font-size:30px;
+    color:$grey_level_1;
+    background-image:radial-gradient(circle at center,$blue_level_1,$bluegrey_level_1);
+    transition:transform 0.3s,box-shadow 0.3s;
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow:0px 0px 20px rgba($bluegrey_level_2,0.7);
+    }
+}

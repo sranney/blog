@@ -129,10 +129,28 @@
     transform: translateY(-0.5rem);
     background-image: linear-gradient(to right, #3c6eaa 0%, #3c6eaa 1%, #37474f 10%, #37474f 50%, #37474f 90%, #3c6eaa 99%, #3c6eaa); }
 
+.admin_home {
+  cursor: pointer;
+  position: fixed;
+  top: 3%;
+  left: 1%;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: none;
+  font-size: 30px;
+  color: #bebebe;
+  background-image: radial-gradient(circle at center, #3c6eaa, #37474f);
+  transition: transform 0.3s,box-shadow 0.3s; }
+  .admin_home:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px rgba(38, 50, 56, 0.7); }
+
 .title {
   font-family: "Vollkorn", serif;
   text-align: center;
   font-size: 2rem;
+  margin: 140px 0 0 0;
   text-transform: uppercase; }
   .title > div {
     color: #eee;
@@ -224,5 +242,4 @@ body {
 
 #root {
   position: relative;
-  margin: 0 1rem;
-  padding: 140px 0 20px 0; }
+  margin: 0 1rem; }

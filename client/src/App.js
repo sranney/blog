@@ -9,6 +9,7 @@ import NavBar from "./additional_components/navbar";
 import FrontPage from "./pages/front_page/Front_Page";
 import SectionMenu from "./pages/section_menu/Section_Menu";
 import Post from "./pages/post/Post";
+import NewPost from "./pages/new_post/New_Post";
 
 export default class App extends Component {
     constructor(props){
@@ -104,7 +105,17 @@ export default class App extends Component {
                   />
                 )
               }}
-            />         
+            />
+            <Route 
+              exact path="/admin"
+              render={(routerProps)=>{
+                return (
+                  <NewPost
+                    {...routerProps}
+                  />
+                )
+              }}
+            />
           </Switch>
         </div>
       );

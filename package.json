@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass scss/main.scss ./client/src/App.css -w"
+    "sass": "node-sass scss/main.scss ./client/src/App.css -w",
+    "client": "node scripts/client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.10",
     "node-sass": "^4.7.2"
   }
 }

@@ -9,7 +9,7 @@ import NavBar from "./additional_components/navbar";
 import FrontPage from "./pages/front_page/Front_Page";
 import SectionMenu from "./pages/section_menu/Section_Menu";
 import Post from "./pages/post/Post";
-import NewPost from "./pages/new_post/New_Post";
+import Admin from "./pages/admin/Admin";
 
 export default class App extends Component {
     constructor(props){
@@ -36,9 +36,11 @@ export default class App extends Component {
 
           const cutOff = Math.round((this.scrollY/this.innerHeight)*100);
           //change linear gradient of navbar
-      
-          const linearGradient = `linear-gradient(to bottom, rgba(30,200,160,0.7) ${-70+cutOff}%,rgba(60, 110, 170, 1) ${-40+cutOff}%,rgba(60, 110, 170, 1) ${cutOff*2}%,rgba(30,200,160,0.7) ${80+cutOff*2}%,rgba(30,200,160,0.7) 100%)`;
-          document.querySelector(".navigation").style.backgroundImage = linearGradient;
+          console.log(window.location.pathname)
+          if(window.location.pathname !== "/admin"){
+            const linearGradient = `linear-gradient(to bottom, rgba(30,200,160,0.7) ${-70+cutOff}%,rgba(60, 110, 170, 1) ${-40+cutOff}%,rgba(60, 110, 170, 1) ${cutOff*2}%,rgba(30,200,160,0.7) ${80+cutOff*2}%,rgba(30,200,160,0.7) 100%)`;
+            document.querySelector(".navigation").style.backgroundImage = linearGradient;
+          }
           
       });      
     }
@@ -110,7 +112,7 @@ export default class App extends Component {
               exact path="/admin"
               render={(routerProps)=>{
                 return (
-                  <NewPost
+                  <Admin
                     {...routerProps}
                   />
                 )

@@ -1,0 +1,51 @@
+.loginForm{
+    font-family:$fontFamily_1;
+    background-color:$bluegrey_level_1;
+    width:max-content;
+    margin:15% auto 0 auto;
+    text-align:center;
+    color:$blue_level_1;
+    padding:30px;
+    box-shadow:10px 10px 25px rgba($bluegrey_level_1,0.6);
+    & .form-group{
+        position:relative;
+        width:50vw;
+        margin:0 auto;
+        height:85px;
+        margin:0;
+        & input{
+            left:50%;
+            
+            transform: translateX(-50%);
+            position:absolute;
+            background-color:white;
+            color:$green_level_1;
+            font-size:32px;
+            border:0px solid black;
+            outline:none;
+            transition:border 0.2s;
+            &~label{
+                width:max-content;
+                position:absolute;
+                left:50%;
+                transform: translateX(-50%);
+                top:70%;
+                font-size:16px;
+                transition:top 0.4s,font-size 0.4s;       
+            }
+            &:focus{
+                border-bottom:5px solid $red_level_2;
+            }
+            &:placeholder-shown~label{
+                top:0%;
+                font-size:32px;
+            }
+        }
+    }
+}
+
+.postForm{
+    & input, & textarea{
+        width:100%;
+    }
+}

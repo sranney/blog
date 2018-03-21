@@ -27,3 +27,49 @@
 @mixin background_image_linearGradient($dir:to bottom,$beg_col:$blue_level_1,$beg_perc:0%,$break_perc:0%,$end_col:$green_level_1,$end_perc:100%){
     background-image:linear-gradient($beg_col $beg_perc $break_perc, $end_col $end_perc);    
 }
+
+@mixin all-border-growth($col:$blue_level_1){
+    & [class^="border"]{
+        position:absolute;
+        background-color:$col;
+        transition:min-height 0.6s,min-width 0.6s;
+    }
+  
+    & [class^="border"]:nth-child(even){
+        min-width:0%;
+        height:5px;
+    }
+    
+    &:hover [class^="border"]:nth-child(even){
+        min-width:100%;
+    }
+    
+    & [class^="border"]:nth-child(odd){
+        min-height:0%;
+        width:5px;
+    }
+    
+    &:hover 
+    [class^="border"]:nth-child(odd){
+        min-height:100%;
+    }
+    
+    & .border-left{
+        top:0%;
+        left:0%;
+        transform: rotateZ(0deg);
+    }
+    & .border-top{
+        right:0%;
+        top:0%;
+        transform: rotateZ(180deg);
+    }
+    & .border-right{
+        bottom:0%;
+        right:0%;
+    }
+    & .border-bottom{
+        bottom:0%;
+        left:0%;
+    }    
+}

@@ -1,0 +1,114 @@
+.newPost_area,.editPost_area{
+    margin:10% auto 0 auto;
+    width:75%;
+    padding:30px;
+    background-color:$bluegrey_level_1;
+    & .newPost,& .editPost{
+        cursor:pointer;
+        color:$white_level_1;
+        font-size:20px;
+        background-image:radial-gradient(circle at center,$green_level_1 40%,$blue_level_1);
+        padding:10px;
+        border:none;
+        &:focus{
+            outline:none;
+        }
+        &:hover{
+            background-image:radial-gradient(circle at center,$green_level_1 60%,$blue_level_1);
+        }
+    }    
+}
+
+.newPost_area{
+    & .section-group{
+        margin-top:20px;
+    }
+}
+
+.post_list{
+    margin-left:0;
+    padding-left:0;
+    & .edit_post_item{
+        display:flex;
+        width:100%;
+        justify-content:space-around;
+        color:$green_level_1;
+        font-size:25px;
+        background-color:$bluegrey_level_2;
+        &:first-child{
+            margin-top:20px;
+        }
+        &:not(:first-child){
+            margin-top:5px;
+        }
+        & div{
+            width:60%;
+        }
+        & .edit_post_edit{
+            width:40%;
+            cursor:pointer;
+            padding-left:20px;
+            padding-right:20px;
+            color:$white_level_1;
+            background-color:rgba($green_level_1,1);
+            border:none;
+            &:hover,&:focus{
+                outline:none;
+                background-color:rgba($green_level_1,0.8);
+            }
+        }
+    }
+}
+
+.post_input_title{
+    margin-top:20px;
+}
+
+.section-group{
+    background-color:$bluegrey_level_2;
+    padding-top:15px;
+    padding-bottom:15px;
+    & input, & textarea{
+        width:90%;
+        margin:0 5% 0 5%;
+    }
+}
+
+.addSection,.removeSection,.savePost{
+    margin-top:20px;
+    position:relative;
+    cursor:pointer;
+    color:$bluegrey_level_1;
+    padding:25px;
+    border:none;
+    &:focus{
+        outline:none;
+    }
+}
+.addSection{    
+    background-image:radial-gradient(circle at center,$white_level_1 35%,$pastel_green);
+    &:hover{background-image:radial-gradient(circle at center,$white_level_1 5%,$pastel_green);}
+    @include all-border-growth($col:$green_level_1);    
+}
+.removeSection{
+    background-image:radial-gradient(circle at center,$white_level_1 35%,$pastel_red);
+    &:hover{background-image:radial-gradient(circle at center,$white_level_1 5%,$pastel_red);}
+    @include all-border-growth($col:$red_level_2);    
+}
+.savePost{
+    background-image:radial-gradient(circle at center,$white_level_1 35%,$pastel_blue);
+    &:hover{background-image:radial-gradient(circle at center,$white_level_1 5%,$pastel_blue);}
+    @include all-border-growth($col:$blue_level_1);
+}
+
+.deletePost{
+    color:$white_level_1;
+    background-color:$red_level_2;
+    padding:15px;
+    border:none;
+    &:focus,&:active{
+        outline:none;
+    }
+    cursor:pointer;
+    font-size:20px;
+}

@@ -7,6 +7,8 @@ export default class PostEditor extends Component{
         super(props);
         this.state = {
             title:this.props.post?this.props.post.title:"",
+            major_category:"Tutorials",
+            minor_category:"Front-End",
             tags:this.props.post?this.props.post.tags:[],
             sections:this.props.post?this.props.post.sections:{
                 section0:{
@@ -38,7 +40,9 @@ export default class PostEditor extends Component{
         this.setState({sections});
     }
     handleTitleChange=e=>this.setState({title:e.target.value});
-    handleTagsChange=e=>this.setState({tags:e.target.value.split(",")});    
+    handleTagsChange=e=>this.setState({tags:e.target.value.split(",")});
+    handleMajCatChange=e=>this.setState({major_category:e.target.value});  
+    handleMinCatChange=e=>this.setState({minor_category:e.target.value});  
     handleSectionChange=e=>{
         const {sections} = this.state;
         let {name,value} = e.target;
@@ -86,6 +90,31 @@ export default class PostEditor extends Component{
                 value={this.state.title}
                 required
             />
+            <select className="majCat" onChange={this.handleMajCatChange} value={this.state.major_category}>
+                <option value="Tutorials">Tutorials</option>
+                <option value="Learning">Learning</option>
+                <option value="Thinking">Thinking</option>
+            </select>
+            {
+                
+                this.state.major_category==="Tutorials"?
+                    <select className="minCat" onChange={this.handleMinCatChange} value={this.state.minor_category}>
+                        <option value="Front-End">Front-End</option>
+                        <option value="Back-End">Back-End</option>
+                    </select>
+                :
+                this.state.major_category==="Learning"?
+                    <select className="minCat" onChange={this.handleMinCatChange} value={this.state.minor_category}>
+                        <option value="Udemy">Udemy</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="Other">Other</option>
+                    </select>
+                :
+                    <select className="minCat" onChange={this.handleMinCatChange} value={this.state.minor_category}>
+                        <option value="Faith">Faith</option>
+                        <option value="Creative">Creative</option>
+                    </select>
+            }
             <input
                 type="text"
                 name="tags"

@@ -45,7 +45,26 @@
 }
 
 .postForm{
-    & input, & textarea{
+    & input, & textarea, & select{
         width:100%;
+        border:none;
+        background-color:$blue_level_1;
+        color:$green_level_1;
+        margin-top:5px;
+        &::-webkit-input-placeholder{
+            color:$green_level_1;
+        }
+        & option:checked{
+            color:$white_level_1;
+            background-color:$green_level_1;
+        }
+        & option:not(:checked){
+            background-color:$white_level_1;
+            color:$green_level_1;
+        }
+        & option:hover{
+            background-color:$grey_level_1;
+            color:$green_level_1;
+        }
     }
 }

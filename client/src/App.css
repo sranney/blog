@@ -124,6 +124,8 @@
       font-family: "Ubuntu Mono", monospace; }
       .menuItem_link a:hover, .menuItem_link a:visited, .menuItem_link a:link {
         text-decoration: none; }
+  .menuItem p {
+    font-size: 2rem; }
   .menuItem:hover {
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     transform: translateY(-0.5rem);
@@ -245,8 +247,23 @@
         top: 0%;
         font-size: 32px; }
 
-.postForm input, .postForm textarea {
-  width: 100%; }
+.postForm input, .postForm textarea, .postForm select {
+  width: 100%;
+  border: none;
+  background-color: #3c6eaa;
+  color: #1ec8a0;
+  margin-top: 5px; }
+  .postForm input::-webkit-input-placeholder, .postForm textarea::-webkit-input-placeholder, .postForm select::-webkit-input-placeholder {
+    color: #1ec8a0; }
+  .postForm input option:checked, .postForm textarea option:checked, .postForm select option:checked {
+    color: #eee;
+    background-color: #1ec8a0; }
+  .postForm input option:not(:checked), .postForm textarea option:not(:checked), .postForm select option:not(:checked) {
+    background-color: #eee;
+    color: #1ec8a0; }
+  .postForm input option:hover, .postForm textarea option:hover, .postForm select option:hover {
+    background-color: #bebebe;
+    color: #1ec8a0; }
 
 .newPost_area, .editPost_area {
   margin: 10% auto 0 auto;
@@ -306,6 +323,8 @@
   .section-group input, .section-group textarea {
     width: 90%;
     margin: 0 5% 0 5%; }
+  .section-group textarea {
+    margin-top: 5px; }
 
 .addSection, .removeSection, .savePost {
   margin-top: 20px;

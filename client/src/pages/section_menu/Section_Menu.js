@@ -1,5 +1,7 @@
 import React,{Component} from "react";
 
+import API from "../../api/api";
+
 //import page components
 import NavBar from "../../additional_components/navbar";
 import Footer from "../../additional_components/footer";
@@ -9,7 +11,11 @@ import Menu from "./components/menu";
 export default class SectionMenu extends Component{
     constructor(props){
         super(props);
+        this.state={
+            menuItems:[]
+        }
     }
+    componentDidMount=()=>API.getPosts({sectionID:this.props.match.params.sectionID}).then(menuItems=>this.setState({menuItems:menuItems.data}));
     goHome=()=>this.props.history.push("/");
     render=()=>{
         return (
@@ -27,7 +33,7 @@ export default class SectionMenu extends Component{
                         })
                     }
                 </div>
-                <Menu/>
+                <Menu menuItems={this.state.menuItems}/>
                 <Footer/>
                 <Overlay
                     links={this.props.links} 

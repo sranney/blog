@@ -15,14 +15,7 @@ export default class Overlay extends Component{
                 <div onClick={this.props.hideOverlay} className={`closeBtn ${this.props.display?"shown":null}`}><i className="fa fa-times"></i></div>
                 <div className={`content ${this.props.display?"shown":null}`}>
                     {
-                        this.props.links.map((link_href,idx)=>{
-                            return (
-                                this.props.mainMenu?
-                                    <div key={idx} onClick={()=>this.props.showSubMenu(`subtype${idx}`)} className="section_category">{link_href}</div>
-                                :
-                                    <Link key={idx} to={`/section/${link_href.replace(/ /g,"_")}`} onClick={this.dismiss} className="section_category">{link_href}</Link>
-                            )
-                        })
+                        this.props.links.map((link_href,idx)=><Link key={idx} to={`/section/${link_href.replace(/ /g,"_")}`} onClick={this.dismiss} className="section_category">{link_href}</Link>)
                     }
                 </div>
             </div>

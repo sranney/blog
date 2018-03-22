@@ -20,13 +20,9 @@ export default class App extends Component {
             menuType:"",
             overlayLinks:{
                 initial_tutorial:["Front-End","Back-End"],
-                subtype0_tutorial:["JavaScript","CSS","APIs","Libraries"],
-                subtype1_tutorial:["node.js, npm","web sockets","databases"],
                 initial_learning:["Udemy","YouTube","Other"],
-                subtype0_learning:["Stephen Grider","Jonas Schmedtmann"],
-                subtype1_learning:["Meth Meth Method","Tyler McGinnis","Net Ninja"],
-                subtype2_learning:["Algorithms","Medium","Wes Bos"]
-            },
+                initial_thinking:["Faith","Creative"]
+              },
             mainMenu:true
         }
     }

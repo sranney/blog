@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 const authRouter = require("./routes/auth");
 const adminRouter = require("./routes/admin");
+const userRouter = require("./routes/navigation");
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -13,6 +14,7 @@ app.use(express.static("client/build"));
 
 app.use("/",authRouter);
 app.use("/admin",adminRouter);
+app.use("/users",userRouter);
 
 const mongoose = require("mongoose");
 const mongoURI = process.env.mongoURI||require("../secrets/blog").MONGOURI;

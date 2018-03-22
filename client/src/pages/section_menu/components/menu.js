@@ -3,24 +3,9 @@ import React, {Component} from "react";
 //import react router component
 import {Link} from "react-router-dom";
 
-import axios from "axios";
+import moment from "moment";
 
 export default class Menu extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            menuItems:[
-                {icon:"devicon-css3-plain",name:"CSS MasterClass, Part One"},
-                {icon:"devicon-bootstrap-plain",name:"Building Bootstrap from Scratch"}
-            ]
-        }
-    }
-    componentDidMount=()=>{
-        axios.get("/")
-    }
-    goTo = ()=>{
-        
-    }
     reveal = (e)=>{
         console.log(e.target);
        
@@ -49,7 +34,7 @@ export default class Menu extends Component {
         return (
             <div className="menuContainer">
                 {
-                    this.state.menuItems.map((menuItem,idx)=>{
+                    this.props.menuItems.map((menuItem,idx)=>{
                         return (
                             <div 
                                 value="menuItem"
@@ -61,8 +46,9 @@ export default class Menu extends Component {
                                 onMouseOut={this.onMouseOut}
                             >
                                 <div className="menuItem_link">
-                                    <i className={menuItem.icon}></i>
-                                    <Link to={`/section/${menuItem.name}`}>{menuItem.name}</Link>
+                                    <Link to={`/post/${menuItem.title}`}>{menuItem.title}</Link>
+                                    <p>{menuItem.tags.join(",")}</p>
+                                    <p>{moment(menuItem.post_date).format("MMMM Do YYYY")}</p>
                                 </div>
                             </div>
                         )

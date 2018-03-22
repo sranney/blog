@@ -6,9 +6,12 @@ import {Link} from "react-router-dom";
 import moment from "moment";
 
 export default class Menu extends Component {
+    constructor(props){
+        super(props);
+    }
+
     reveal = (e)=>{
         console.log(e.target);
-       
     }
     onMouseMove = (e)=>{
         const cutOff = 100*(e.clientX-32)/window.innerWidth;
@@ -42,7 +45,7 @@ export default class Menu extends Component {
                                 className="menuItem" 
                                 onMouseOver={this.reveal} 
                                 onMouseMove={this.onMouseMove}
-                                onClick={()=>this.goTo(menuItem.name)}
+                                onClick={()=>this.props.goTo(menuItem.uid)}
                                 onMouseOut={this.onMouseOut}
                             >
                                 <div className="menuItem_link">

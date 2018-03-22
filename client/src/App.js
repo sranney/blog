@@ -100,6 +100,7 @@ export default class App extends Component {
                 return (
                   <Post
                     {...routerProps}
+                    showOverlay={this.showOverlay}
                   />
                 )
               }}

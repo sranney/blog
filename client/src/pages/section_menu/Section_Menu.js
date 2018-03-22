@@ -17,6 +17,9 @@ export default class SectionMenu extends Component{
     }
     componentDidMount=()=>API.getPosts({sectionID:this.props.match.params.sectionID}).then(menuItems=>this.setState({menuItems:menuItems.data}));
     goHome=()=>this.props.history.push("/");
+    goTo=uid=>{
+        this.props.history.push(`/post/${uid}`)
+    }
     render=()=>{
         return (
             <div>
@@ -33,7 +36,7 @@ export default class SectionMenu extends Component{
                         })
                     }
                 </div>
-                <Menu menuItems={this.state.menuItems}/>
+                <Menu menuItems={this.state.menuItems} goTo={this.goTo}/>
                 <Footer/>
                 <Overlay
                     links={this.props.links} 

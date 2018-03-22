@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const API = {
+    //user api calls
     getPosts:(search)=>axios.post("/users/getPosts",search),
+    getPost:(post_id)=>axios.post("/users/getPost",post_id),
     
     //admin api calls
     Auth:(email,password)=>axios.post("/signin",{email,password}),

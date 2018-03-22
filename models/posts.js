@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const uuidv4 = require("uuid/v4");
 
 const PostSchema = mongoose.Schema({
     post_date:{type:Date,default:Date.now()},
@@ -8,7 +9,8 @@ const PostSchema = mongoose.Schema({
     comments:{type: Array,default:[]},
     title:{type:String},
     tags:{type: Array,default:[]},
-    sections:{type:Object}
+    sections:{type:Object},
+    uid:{type:String,default:uuidv4()}
 });
 
 const Posts = mongoose.model("Post",PostSchema);

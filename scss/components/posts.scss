@@ -115,3 +115,29 @@
     cursor:pointer;
     font-size:20px;
 }
+
+.post_header{
+    font-family:$fontFamily_2;
+    font-size:30px;
+    padding:10px 45px 10px 45px;
+    color:$white_level_1;
+    width:max-content;
+    @include background_image_linearGradient(to right bottom,rgba($green_level_1,0.5),0%,0%,rgba($blue_level_1,1),100%);
+    clip-path: polygon(0% 0%,95% 0%,100% 50%,95% 100%,0% 100%,5% 50%);
+    transition: margin-left 0.5s;
+    &:hover{
+        margin-left:20px;
+    }
+}
+.post_text{
+    font-family:$fontFamily_2;
+    font-size:20px;
+    color:$white_level_1;
+    background-color:$red_level_1;
+    font-weight:bold;
+    padding:10px 20px 10px 20px;
+}
+
+.postContainer,.sectionContainer{
+    margin-top:20px;
+}

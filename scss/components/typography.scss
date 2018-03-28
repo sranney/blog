@@ -112,3 +112,46 @@
     font-family:$fontFamily_1;
     color:$white_level_1;
 }
+
+.comments{
+    position:relative;
+    margin-top:20px;
+    margin-bottom:20px;
+    font-size:40px;
+    font-family:$fontFamily_1;
+    font-weight:bold;
+    color:$blue_level_1;
+    text-align:center;
+    clip-path:polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    text-shadow:1px 1px 10px rgba(0,0,0,0.5);
+    background-image:linear-gradient(to bottom,rgba($pastel_blue,1) 0%,rgba($pastel_blue,1) 20%,transparent 20%,transparent 40%,rgba($pastel_blue,1) 40%,rgba($pastel_blue,1) 60%,transparent 60%,transparent 80%,rgba($pastel_blue,1) 80%,rgba($pastel_blue,1) 100%);
+    transition-timing-function:cubic-bezier(.45,-0.79,.37,1.51);
+    transition: letter-spacing 0.3s,font-size 0.3s,color 0.3s;
+}
+
+.comments.comments_trans{
+    letter-spacing:10px;
+    font-size:55px;
+    color:$green_level_1;
+}
+
+.scrollDiv_comments{
+    position:absolute;
+    content:" ";
+    z-index:-1;
+    width:100%;
+    height:100%;
+    top:0%;
+    left:0%;
+    clip-path:polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    background-image:linear-gradient(to bottom,transparent 0%,transparent 20%,rgba($pastel_blue,1) 20%,rgba($pastel_blue,1) 40%,transparent 40%,transparent 60%,rgba($pastel_blue,1) 60%,rgba($pastel_blue,1) 80%,transparent 80%,transparent 100%);
+}
+
+
+
+.submitComment,.prevComments{
+    margin-top:15px;
+    font-family:$fontFamily_2;
+    text-align:center;
+    color:$white_level_1;
+}

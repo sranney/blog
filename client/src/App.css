@@ -53,7 +53,8 @@
   background: linear-gradient(to right, transparent 0%, transparent 50%, #1ec8a0 50%, #1ec8a0 100%);
   background-size: 200% 100%;
   background-position: -0.1%;
-  transition: background-position 0.3s,letter-spacing 0.1s; }
+  transition: background-position 0.8s,letter-spacing 0.8s;
+  transition-timing-function: cubic-bezier(0.41, -0.34, 0.21, 1); }
 
 .overlay .content .section_category:hover {
   background-position: 100%;
@@ -250,7 +251,7 @@
 .postForm input, .postForm textarea, .postForm select {
   width: 100%;
   border: none;
-  background-color: #3c6eaa;
+  background-color: #eee;
   color: #1ec8a0;
   margin-top: 5px; }
   .postForm input::-webkit-input-placeholder, .postForm textarea::-webkit-input-placeholder, .postForm select::-webkit-input-placeholder {
@@ -264,6 +265,22 @@
   .postForm input option:hover, .postForm textarea option:hover, .postForm select option:hover {
     background-color: #bebebe;
     color: #1ec8a0; }
+
+.commentsForm {
+  transform: translateX(-200%);
+  background-color: #37474f;
+  padding: 20px;
+  transition: transform 1s; }
+  .commentsForm input, .commentsForm button, .commentsForm textarea {
+    font-size: 30px;
+    width: 95%;
+    margin: 0 2.5%;
+    text-align: center; }
+  .commentsForm input {
+    margin-top: 30px; }
+
+.commentsForm.show_commentsform {
+  transform: translateX(0%); }
 
 .newPost_area, .editPost_area {
   margin: 10% auto 0 auto;
@@ -444,6 +461,29 @@
   font-size: 20px; }
   .deletePost:focus, .deletePost:active {
     outline: none; }
+
+.post_header {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 30px;
+  padding: 10px 45px 10px 45px;
+  color: #eee;
+  width: max-content;
+  background-image: linear-gradient(rgba(30, 200, 160, 0.5) 0% 0%, #3c6eaa 100%);
+  clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%);
+  transition: margin-left 0.5s; }
+  .post_header:hover {
+    margin-left: 20px; }
+
+.post_text {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 20px;
+  color: #eee;
+  background-color: #aa6eaa;
+  font-weight: bold;
+  padding: 10px 20px 10px 20px; }
+
+.postContainer, .sectionContainer {
+  margin-top: 20px; }
 
 .loader_container {
   position: absolute;
@@ -714,13 +754,51 @@
   font-family: "Vollkorn", serif;
   color: #eee; }
 
+.comments {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-family: "Vollkorn", serif;
+  font-weight: bold;
+  color: #3c6eaa;
+  text-align: center;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #bae1ff 0%, #bae1ff 20%, transparent 20%, transparent 40%, #bae1ff 40%, #bae1ff 60%, transparent 60%, transparent 80%, #bae1ff 80%, #bae1ff 100%);
+  transition-timing-function: cubic-bezier(0.45, -0.79, 0.37, 1.51);
+  transition: letter-spacing 0.3s,font-size 0.3s,color 0.3s; }
+
+.comments.comments_trans {
+  letter-spacing: 10px;
+  font-size: 55px;
+  color: #1ec8a0; }
+
+.scrollDiv_comments {
+  position: absolute;
+  content: " ";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  background-image: linear-gradient(to bottom, transparent 0%, transparent 20%, #bae1ff 20%, #bae1ff 40%, transparent 40%, transparent 60%, #bae1ff 60%, #bae1ff 80%, transparent 80%, transparent 100%); }
+
+.submitComment, .prevComments {
+  margin-top: 15px;
+  font-family: "Ubuntu Mono", monospace;
+  text-align: center;
+  color: #eee; }
+
 body {
   background-image: radial-gradient(circle at right top, #ffb3ba, transparent), radial-gradient(circle at left bottom, #ffdfba, transparent);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  position: relative; }
+  position: relative;
+  overflow-x: hidden; }
 
 #root {
   position: relative;

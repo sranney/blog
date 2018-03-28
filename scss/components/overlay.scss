@@ -43,7 +43,8 @@
 	background-size: 200% 100%;		
     background-position:-0.1%;
     
-    transition:background-position 0.3s,letter-spacing 0.1s;
+    transition:background-position 0.8s,letter-spacing 0.8s;
+    transition-timing-function: cubic-bezier(.41,-0.34,.21,1);
 }
 
 .overlay .content .section_category:hover{

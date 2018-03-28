@@ -48,7 +48,7 @@
     & input, & textarea, & select{
         width:100%;
         border:none;
-        background-color:$blue_level_1;
+        background-color:$white_level_1;
         color:$green_level_1;
         margin-top:5px;
         &::-webkit-input-placeholder{
@@ -67,4 +67,24 @@
             color:$green_level_1;
         }
     }
+}
+
+.commentsForm{
+    transform: translateX(-200%);
+    background-color:$bluegrey_level_1;
+    padding:20px;
+    transition:transform 1s;
+    & input, & button, & textarea{
+        font-size:30px;
+        width:95%;
+        margin:0 2.5%;
+        text-align:center;
+    }
+    & input{
+        margin-top:30px;
+    }
+}
+
+.commentsForm.show_commentsform{
+    transform: translateX(0%);
 }

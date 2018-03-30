@@ -141,3 +141,45 @@
 .postContainer,.sectionContainer{
     margin-top:20px;
 }
+
+.PostTableContents{
+    cursor:pointer;
+    font-size:32px;
+    font-family:$fontFamily_2;
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+    width:max-content;
+    font-weight:bold;
+
+    & li{
+        margin-left:0;
+        padding-left:0;
+        width:max-content;
+        color:$green_level_1;
+    }
+}
+
+.top_half,.bottom_half{
+    position:absolute;
+    height:20px;
+    width:20px;
+    box-shadow:8px 0 5px;
+    transition-timing-function:cubic-bezier(.3,-0.37,.6,1.25);
+    transition:left 0.5s, top 0.5s,width 0.5s;
+    z-index:-1;    
+}
+
+.top_half{
+    top:52px;
+    left:110%;
+    transform:skewX(-25deg);
+    background-color:$bluegrey_level_2;
+}
+  
+.bottom_half{
+    top:68px;
+    left:110%;
+    transform:skewX(25deg);
+    background-color:$bluegrey_level_2;
+}

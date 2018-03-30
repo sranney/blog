@@ -485,6 +485,42 @@
 .postContainer, .sectionContainer {
   margin-top: 20px; }
 
+.PostTableContents {
+  cursor: pointer;
+  font-size: 32px;
+  font-family: "Ubuntu Mono", monospace;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  width: max-content;
+  font-weight: bold; }
+  .PostTableContents li {
+    margin-left: 0;
+    padding-left: 0;
+    width: max-content;
+    color: #1ec8a0; }
+
+.top_half, .bottom_half {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  box-shadow: 8px 0 5px;
+  transition-timing-function: cubic-bezier(0.3, -0.37, 0.6, 1.25);
+  transition: left 0.5s, top 0.5s,width 0.5s;
+  z-index: -1; }
+
+.top_half {
+  top: 52px;
+  left: 110%;
+  transform: skewX(-25deg);
+  background-color: #263238; }
+
+.bottom_half {
+  top: 68px;
+  left: 110%;
+  transform: skewX(25deg);
+  background-color: #263238; }
+
 .loader_container {
   position: absolute;
   width: 30px;
